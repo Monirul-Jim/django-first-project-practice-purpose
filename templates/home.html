@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<p>This is home page</p>
+<div class="card-container">
+  {% for student in students %}
+  <div class="card">
+    <h2>Student Name : {{ student.name }}</h2>
+    <p><strong>Roll:</strong> {{ student.roll }}</p>
+    <p><strong>Class:</strong> {{ student.class }}</p>
+    <p><strong>Father's Name:</strong> {{ student.father_name }}</p>
+    <p><strong>Mother's Name:</strong> {{ student.mother_name }}</p>
+    <p><strong>Address:</strong> {{ student.address }}</p>
+    <button class="details-button">Details</button>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

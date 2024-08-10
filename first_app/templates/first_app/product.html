@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content%}
+<h3>Hello this is first app home page</h3>
+{% if data %}
+<div class="card-container">
+  {% for student in data %}
+  <div class="card">
+    <h2><strong>Id : </strong> {{student.id}}</h2>
+    <h2><strong>First Name : </strong> {{student.first_name}}</h2>
+    <p><strong>Email: </strong> {{student.email}}</p>
+    <p><strong>Mobile Number : </strong> {{ student.mobile }}</p>
+    <p><strong>Address: </strong> {{ student.address }}</p>
+    <p><strong>Class : </strong> {{ student.class_name }}</p>
+    <p><strong>Address:</strong> {{ student.address }}</p>
+    <a href="{% url 'delete_student' student.id %}" class="details-button"
+      >Delete</a
+    >
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<h4>there is no data</h4>
+{% endif %} {% endblock %}
